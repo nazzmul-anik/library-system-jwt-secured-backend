@@ -17,12 +17,12 @@ public class IssueRecordController {
     @Autowired
     private IssueRecordService  issueRecordService;
 
-    @PostMapping("/issuethebook")
+    @PostMapping("/issuethebook/{bookId}")
     public ResponseEntity<IssueRecord> issueTheBook(@PathVariable Long bookId){
         return ResponseEntity.ok(issueRecordService.issueTheBook(bookId));
     }
 
-    @PostMapping("/retrunthebook/{issuerecordId}")
+    @PostMapping("/retrunthebook/{issueRecordId}")
     public ResponseEntity<IssueRecord> returnTheBook(@PathVariable Long issueRecordId){
         return ResponseEntity.ok(issueRecordService.returnTheBook(issueRecordId));
     }
